@@ -1,10 +1,18 @@
 package com.atividade03.pages;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.atividade03.uimaps.ProdutoMap;
+
 
 public class ProdutoPage {
 	WebDriver driver;
@@ -15,26 +23,33 @@ public class ProdutoPage {
 	
 	ProdutoMap produtoMap = new ProdutoMap(driver);
 	
-	public void pesquisarCep(String cep) {
+	public void preencherCep() {
 		produtoMap.inputCep.click(driver);
-		produtoMap.inputCep.sendkeys(driver, cep);
+		produtoMap.inputCep.sendkeys(driver, "38413108");
 		produtoMap.btncep.click(driver);
 	}
 	
-	/*public void validarFrete() {
-		WebDriverWait wait = new WebDriverWait(driver,10);
-		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated((produtoMap.fretes)));
-			List<WebElement> valoresFretePage = driver.findElements(produtoMap.fretes);
-			for (int i=0; i < valoresFrete.size(); i++);
+	
+
+	public void validarValoresFrete() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		
+		String valorAtual = driver.findElement(By.xpath("//*[contains(text(),'23,17')]")).getText();
+		
+		String valorExpectativa = "23,17";
+		if (valorAtual.equals(valorExpectativa)) {
+			System.out.println("sucesso");
+		}else {
+			System.out.println("Falha");
+		}
+		
+
 		}
 	}
-	*/
-
-	public void validarValores() {
-		// TODO Auto-generated method stub
 		
-	}
+
+		
 	
-}
+	
+
 

@@ -1,6 +1,7 @@
 package com.atividade03.uimaps;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.WebDriver;
 
 import com.atividade03.core.Element;
@@ -17,6 +18,10 @@ public class ProdutoMap {
 	public Element inputCep = new Element(driver, ByValue.XPATH, "//input[@id='calc_cep']");
 	public Element btncep = new Element( driver, ByValue.XPATH, "input[@value='Calcular Frete']");
 	
-	public Element fretes = new Element(driver, ByValue.XPATH, "//tbody[@id='tabe-calcular']//tr/td[contains(text(). 'R$')]");
-
+	
+	/*public Element valores(String vi) {
+		return new Element(driver, ByValue.XPATH, "//*[contains(text()'"+vi+"')]");
+	}
+	*/
+	
 }

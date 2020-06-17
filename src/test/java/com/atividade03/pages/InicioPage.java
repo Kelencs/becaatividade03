@@ -40,17 +40,11 @@ public class InicioPage {
 	public void clicarCalcularFrete() {
 		inicioMap.btncep.click(driver);
 	}
-	public void validarOpçoesDeFrete() {
-		 WebDriverWait wait = new WebDriverWait(driver,10);
-			try {
-				wait.until(ExpectedConditions.visibilityOfElementLocated((inicioMap.fretes)));
-				List<WebElement> valoresFretePage = driver.findElement(inicioMap.fretes);
-				for (int i=0; i < valoresFrete.size(); i++);
-			}
+	
 	 }
 	 
 
 	
 	
 
-}
+

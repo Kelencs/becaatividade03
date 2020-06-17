@@ -1,5 +1,8 @@
 package com.atividade03.scenarios;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,25 +22,23 @@ public class CT01 {
 		driver = new Driver().getDriver();
 		Driver.acessarURL(driver, "https://www.kabum.com.br/");
 		inicioPage = new InicioPage(driver);
+		produtoPage = new ProdutoPage(driver);
 		
 	}
 	@Test
 	public void test() {
+		
 		inicioPage.selecionarCampoBusca("Capa Targus Ipad Mini Rotating Versavu THZ668 Grafite");
 		inicioPage.clicarPraBuscar();
 		inicioPage.lincarProduto();
 		
 		inicioPage.clicarCep();
 		inicioPage.preencherCep("38413108");
+		
 		inicioPage.clicarCalcularFrete();
-				
+		produtoPage.validarValoresFrete();
 		
 		
-		/*
-		buscarPage.chooseProduct("Capa Targus Ipad Mini Rotating Versavu THZ668 Grafite");
-		produtoPage.preencherCep("38413108");
-		produtoPage.validarValores()
-		*/
 		
 		
 		try {
