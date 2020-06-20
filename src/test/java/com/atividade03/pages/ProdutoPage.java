@@ -34,20 +34,20 @@ public class ProdutoPage {
 	public void validarValoresFrete() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		
-		String valorAtual = driver.findElement(By.xpath("//*[contains(text(),'23,17')]")).getText();
-		
-		String valorExpectativa = "23,17";
-		if (valorAtual.equals(valorExpectativa)) {
-			System.out.println("sucesso");
-		}else {
-			System.out.println("Falha");
-		}
 		
 
-		}
+		
+	try {
+		String textoElement = driver.findElement(By.xpath("//*[contains(text(),'23,17')]")).getText();
+        assertEquals("23,17", textoElement);
+		
+		System.out.println("Sucesso");
+	}catch (Exception e) {
+		System.out.println("Falha!");
+	}
 	}
 		
-
+}
 		
 	
 	
